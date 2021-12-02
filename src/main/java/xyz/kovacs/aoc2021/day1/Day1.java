@@ -1,10 +1,11 @@
 package xyz.kovacs.aoc2021.day1;
 
 import one.util.streamex.StreamEx;
-import xyz.kovacs.aoc2021.util.AocUtils;
 
-import java.util.Optional;
 import java.util.OptionalDouble;
+
+import static xyz.kovacs.aoc2021.util.AocUtils.getAllLines;
+import static xyz.kovacs.aoc2021.util.AocUtils.getLogger;
 
 public class Day1 {
 	
@@ -19,32 +20,32 @@ public class Day1 {
 	 * Solution for puzzle 1.
 	 */
 	public static void doPuzzle1(String inputFile) {
-		AocUtils.getLogger(() -> true).info(
-				StreamEx.of(AocUtils.getAllLines(() -> inputFile)
-				                    .stream()
-				                    .map(Integer::valueOf))
-				        .pairMap((current, next) -> next.compareTo(current))
-				        .filter(diff -> diff > 0)
-				        .count()
-		                                   );
+		getLogger(() -> true)
+				.info(StreamEx.of(getAllLines(() -> inputFile).stream()
+				                                              .map(Integer::valueOf))
+				              .pairMap((current, next) -> next.compareTo(current))
+				              .filter(diff -> diff > 0)
+				              .count());
 	}
 	
 	/**
 	 * Solution for puzzle 1 (window = 1), and puzzle 2 (window = 3).
 	 */
 	public static void doPuzzle2(String inputFile, int window) {
-		AocUtils.getLogger(() -> true).info("{} (window of {}): {}", inputFile, window,
-		                                    StreamEx.ofSubLists(AocUtils.getAllLines(() -> inputFile)
-		                                                                .stream()
-		                                                                .map(Integer::valueOf)
-		                                                                .toList(),
-		                                                        window, 1)
-		                                            .map(l -> l.stream().mapToInt(Integer::intValue).average())
-				                                    .filter(OptionalDouble::isPresent) // prevent warning
-		                                            .map(OptionalDouble::getAsDouble)
-		                                            .pairMap((current, next) -> next.compareTo(current))
-		                                            .filter(diff -> diff > 0)
-		                                            .count()
-		                                   );
+		getLogger(() -> true)
+				.info("{} (window of {}): {}",
+				      inputFile,
+				      window,
+				      StreamEx.ofSubLists(getAllLines(() -> inputFile).stream()
+				                                                      .map(Integer::valueOf)
+				                                                      .toList(), window, 1)
+				              .map(l -> l.stream()
+				                         .mapToInt(Integer::intValue)
+				                         .average())
+				              .filter(OptionalDouble::isPresent) // prevent warning
+				              .map(OptionalDouble::getAsDouble)
+				              .pairMap((current, next) -> next.compareTo(current))
+				              .filter(diff -> diff > 0)
+				              .count());
 	}
 }

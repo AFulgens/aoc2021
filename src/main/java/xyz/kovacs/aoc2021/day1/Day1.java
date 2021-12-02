@@ -19,8 +19,9 @@ public class Day1 {
 	/**
 	 * Solution for puzzle 1.
 	 */
+	@SuppressWarnings("unused")
 	public static void doPuzzle1(String inputFile) {
-		getLogger(() -> true)
+		getLogger(u -> u)
 				.info(StreamEx.of(getAllLines(() -> inputFile).stream()
 				                                              .map(Integer::valueOf))
 				              .pairMap((current, next) -> next.compareTo(current))
@@ -32,7 +33,7 @@ public class Day1 {
 	 * Solution for puzzle 1 (window = 1), and puzzle 2 (window = 3).
 	 */
 	public static void doPuzzle2(String inputFile, int window) {
-		getLogger(() -> true)
+		getLogger(u -> u)
 				.info("{} (window of {}): {}",
 				      inputFile,
 				      window,

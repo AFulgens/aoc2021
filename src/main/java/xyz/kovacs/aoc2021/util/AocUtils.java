@@ -9,6 +9,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class AocUtils {
@@ -23,7 +24,7 @@ public class AocUtils {
 	/**
 	 * Magic for providing loggers for static contexts
 	 */
-	public static Logger getLogger(Supplier<Object> contextSupplier) {
+	public static Logger getLogger(Function<Object, Object> contextSupplier) {
 		return LogManager.getLogger(StringUtils.substringBefore(contextSupplier.getClass().getName(), "$$Lambda$"));
 	}
 	
@@ -45,7 +46,7 @@ public class AocUtils {
 			//noinspection ConstantConditions
 			return Files.readAllLines(Paths.get(pathSupplier.getClass().getResource(path.toString()).toURI()));
 		} catch (URISyntaxException | IOException | NullPointerException e) {
-			getLogger(() -> true).error("No bueno, cannot open '{}'", pathSupplier.get(), e);
+			getLogger(u->u).error("No bueno, cannot open '{}'", pathSupplier.get(), e);
 			System.exit(1);
 			return null; // keeping the compiler happy
 		}

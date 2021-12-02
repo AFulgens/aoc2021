@@ -32,7 +32,7 @@ public class Day2 {
 				default -> throw new IllegalArgumentException("No bueno, I don't know about " + split[0]);
 			}
 		}
-		getLogger(() -> true).info(forward * depth);
+		getLogger(u -> u).info(forward * depth);
 	}
 	
 	/**
@@ -57,6 +57,6 @@ public class Day2 {
 				default -> throw new IllegalArgumentException("No bueno, I don't know about " + split[0]);
 			}
 		}
-		getLogger(() -> true).info(forward * depth);
+		getLogger(u -> u).info(forward * depth);
 	}
 }

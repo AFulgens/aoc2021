@@ -4,8 +4,8 @@ import one.util.streamex.StreamEx;
 
 import java.util.OptionalDouble;
 
-import static xyz.kovacs.aoc2021.util.AocUtils.getAllLines;
-import static xyz.kovacs.aoc2021.util.AocUtils.getLogger;
+import static xyz.kovacs.util.AocUtils.getAllLines;
+import static xyz.kovacs.util.AocUtils.getLogger;
 
 public class Day1 {
 	

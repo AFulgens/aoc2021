@@ -1,7 +1,7 @@
 package xyz.kovacs.aoc2021.day2;
 
-import static xyz.kovacs.aoc2021.util.AocUtils.getAllLines;
-import static xyz.kovacs.aoc2021.util.AocUtils.getLogger;
+import static xyz.kovacs.util.AocUtils.getAllLines;
+import static xyz.kovacs.util.AocUtils.getLogger;
 
 public class Day2 {
 	
@@ -36,7 +36,7 @@ public class Day2 {
 	}
 	
 	/**
-	 *
+	 * Solution for puzzle 2.
 	 */
 	public static void doPuzzle2(String inputFile) {
 		long forward = 0L;

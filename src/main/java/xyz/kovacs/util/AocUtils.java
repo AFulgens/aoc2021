@@ -33,7 +33,7 @@ public class AocUtils {
 	/**
 	 * Provides the contents of a given file, found in resources
 	 *
-	 * @param pathSupplier supplies the name of the file within resources (looking for the file in the same package ;))
+	 * @param pathSupplier supplies the name of the file within resources (looking for the file in the same package 😉)
 	 * @return all the lines of the file (UTF-8) given as param
 	 */
 	public static List<String> getAllLines(Supplier<String> pathSupplier) {

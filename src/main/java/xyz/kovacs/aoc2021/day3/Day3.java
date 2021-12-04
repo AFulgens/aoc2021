@@ -93,7 +93,7 @@ public class Day3 {
 			}
 		}
 		
-		throw new IllegalStateException("No bueno, no value could be determined :(");
+		throw new IllegalStateException("No bueno, no value could be determined 😕");
 	}
 	
 }

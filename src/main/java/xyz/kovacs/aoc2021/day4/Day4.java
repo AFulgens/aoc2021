@@ -33,9 +33,7 @@ public class Day4 {
 			lines.set(0, StringUtils.substringAfter(lines.get(0), ","));
 		}
 		
-		getLogger(u -> u).info(lastNumber * (Arrays.stream(winningBoard)
-		                                           .flatMapToInt(Arrays::stream)
-		                                           .filter(i -> i > 0)
+		getLogger(u -> u).info(lastNumber * (Arrays.stream(winningBoard).flatMapToInt(Arrays::stream).filter(i -> i > 0)
 		                                           .sum()));
 	}
 	
@@ -62,9 +60,7 @@ public class Day4 {
 			lines.set(0, StringUtils.substringAfter(lines.get(0), ","));
 		}
 		
-		getLogger(u -> u).info(lastNumber * (Arrays.stream(boards.get(0))
-		                                           .flatMapToInt(Arrays::stream)
-		                                           .filter(i -> i > 0)
+		getLogger(u -> u).info(lastNumber * (Arrays.stream(boards.get(0)).flatMapToInt(Arrays::stream).filter(i -> i > 0)
 		                                           .sum()));
 	}
 	
@@ -78,10 +74,8 @@ public class Day4 {
 				current = new int[5][5];
 			}
 			
-			current[i % 5] = Arrays.stream((StringUtils.removeStart(lines.get(i), " ")
-			                                           .split("\\s+")))
-			                       .mapToInt(Integer::valueOf)
-			                       .toArray();
+			current[i % 5] = Arrays.stream((StringUtils.removeStart(lines.get(i), " ").split("\\s+")))
+			                       .mapToInt(Integer::valueOf).toArray();
 		}
 		result.add(current);
 		return result;

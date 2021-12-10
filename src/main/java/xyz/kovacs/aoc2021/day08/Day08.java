@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day8;
+package xyz.kovacs.aoc2021.day08;
 
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.plexus.util.CollectionUtils;
@@ -8,7 +8,7 @@ import java.util.*;
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day8 {
+public class Day08 {
 	
 	public static void main(String[] args) {
 		doPuzzle1("example");
@@ -40,7 +40,7 @@ public class Day8 {
 	 * maintained in the long run ¯\_(ツ)_/¯
 	 */
 	public static void doPuzzle2(String inputFile) {
-		getLogger(u -> u).info(getAllLines(() -> inputFile).stream().mapToInt(Day8::decode).sum());
+		getLogger(u -> u).info(getAllLines(() -> inputFile).stream().mapToInt(Day08::decode).sum());
 	}
 	
 	public static int decode(String line) {

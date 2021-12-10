@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day6;
+package xyz.kovacs.aoc2021.day06;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day6 {
+public class Day06 {
 	
 	public static void main(String[] args) {
 		doPuzzle("sample", 80);

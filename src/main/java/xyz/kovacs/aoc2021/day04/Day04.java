@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day4;
+package xyz.kovacs.aoc2021.day04;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day4 {
+public class Day04 {
 	
 	public static void main(String[] args) {
 		doPuzzle1("sample");
@@ -49,7 +49,7 @@ public class Day4 {
 		while (boards.size() > 1) {
 			lastNumber = drawNumberAndMarkBoards(lines.get(0), boards);
 			lines.set(0, StringUtils.substringAfter(lines.get(0), ","));
-			boards.removeIf(Day4::isWinner);
+			boards.removeIf(Day04::isWinner);
 		}
 		
 		// although we already have the winning board, the puzzle is not optimised, so have to keep going

@@ -1,9 +1,9 @@
-package xyz.kovacs.aoc2021.day2;
+package xyz.kovacs.aoc2021.day02;
 
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day2 {
+public class Day02 {
 	
 	public static void main(String[] args) {
 		doPuzzle1("sample");

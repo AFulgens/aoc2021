@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day9;
+package xyz.kovacs.aoc2021.day09;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -10,7 +10,7 @@ import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
 @SuppressWarnings("NonAsciiCharacters")
-public class Day9 {
+public class Day09 {
 	
 	public static void main(String[] args) {
 		doPuzzle1("sample");

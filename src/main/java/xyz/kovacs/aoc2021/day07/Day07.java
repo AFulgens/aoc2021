@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day7;
+package xyz.kovacs.aoc2021.day07;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day7 {
+public class Day07 {
 	
 	public static void main(String[] args) {
 		doPuzzle("sample", (a, b) -> Math.abs(a - b));

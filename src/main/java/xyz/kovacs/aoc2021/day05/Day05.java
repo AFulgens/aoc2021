@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day5;
+package xyz.kovacs.aoc2021.day05;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
@@ -11,7 +11,7 @@ import java.util.List;
 import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
-public class Day5 {
+public class Day05 {
 	
 	public static void main(String[] args) {
 		doPuzzle("sample", false);

@@ -1,4 +1,4 @@
-package xyz.kovacs.aoc2021.day3;
+package xyz.kovacs.aoc2021.day03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import static xyz.kovacs.util.AocUtils.getAllLines;
 import static xyz.kovacs.util.AocUtils.getLogger;
 
 @SuppressWarnings("NonAsciiCharacters")
-public class Day3 {
+public class Day03 {
 	
 	public static void main(String[] args) {
 		doPuzzle1("sample");

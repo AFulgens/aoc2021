@@ -16,7 +16,7 @@
 		
 		<version.commons-lang3>3.12.0</version.commons-lang3>
 		<version.streamex>0.8.0</version.streamex>
-		<version.log4j2>2.14.1</version.log4j2>
+		<version.log4j2>2.15.0</version.log4j2>
 		
 		<version.plugin.compiler>3.8.1</version.plugin.compiler>
 		<version.plugin.surefire>3.0.0-M5</version.plugin.surefire>

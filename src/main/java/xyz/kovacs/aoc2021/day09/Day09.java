@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static xyz.kovacs.util.AocUtils.getAllLines;
-import static xyz.kovacs.util.AocUtils.getLogger;
+import static xyz.kovacs.util.AocUtils.*;
 
 @SuppressWarnings("NonAsciiCharacters")
 public class Day09 {
@@ -23,19 +22,17 @@ public class Day09 {
 	 * Solution for puzzle 1. Why so many coördinate-based puzzles, I dislike these 😭
 	 */
 	public static void doPuzzle1(String inputFile) {
-		int[][] map = getMap(getAllLines(() -> inputFile));
+		int[][] map = getMap(() -> inputFile);
 		
 		int dangerZone = 0; // https://tenor.com/view/archer-coroca-dangerzone-gif-18530024
 		for (int xₒ = 0; xₒ < map.length; ++xₒ) { // for all rows
 			cell:
 			for (int yₒ = 0; yₒ < map[xₒ].length; ++yₒ) { // for all columns (i.e. cells)
-				for (int ḥ = -1; ḥ <= 1; ++ḥ) { // for all horizontally adjacent cells
-					for (int ṿ = -1; ṿ <= 1; ++ṿ) { // for all vertically adjacent cells
-						if (ḥ == 0 && ṿ == 0) { // but not for the cell itself
+				for (int xʹ = xₒ - 1; xʹ <= xₒ + 1; ++xʹ) { // for all horizontally adjacent cells
+					for (int yʹ = yₒ - 1; yʹ <= yₒ + 1; ++yʹ) { // for all vertically adjacent cells
+						if (xʹ == xₒ && yʹ == yₒ) { // but not for the cell itself
 							continue;
 						}
-						int xʹ = xₒ + ḥ;
-						int yʹ = yₒ + ṿ;
 						if (xʹ < 0 || xʹ >= map.length || yʹ < 0 || yʹ >= map[xₒ].length) { // but not outside the map
 							continue;
 						}
@@ -56,7 +53,7 @@ public class Day09 {
 	 * Solution for puzzle 2. I didn't write graph-walkers since the university. You have been warned.
 	 */
 	public static void doPuzzle2(String inputFile) {
-		int[][] map = getMap(getAllLines(() -> inputFile));
+		int[][] map = getMap(() -> inputFile);
 		
 		List<Integer> basinSizes = new ArrayList<>();
 		for (int xₙ = 0; xₙ < map.length; ++xₙ) {
@@ -103,9 +100,10 @@ public class Day09 {
 					}
 					int xʹ = xₒ + ḥ;
 					int yʹ = yₒ + ṿ;
-					if (xʹ < 0 || xʹ >= map.length || yʹ < 0 || yʹ >= map[xₙ].length) { // do not check outside the map
+					if (xʹ < 0 || xʹ >= map.length || yʹ < 0 || yʹ >= map[xʹ].length) { // do not check outside the map
 						continue;
 					}
+					
 					if (isBasinPart(map[xʹ][yʹ])) {
 						queue.add(Pair.of(xʹ, yʹ));
 					}
@@ -115,19 +113,6 @@ public class Day09 {
 		
 		getLogger(u -> u).debug("Basin of size {} explored, coördinates are: {}", basin.size(), basin);
 		return basin.size();
-	}
-	
-	public static int[][] getMap(List<String> input) {
-		int x = input.size();
-		int y = input.get(0).length();
-		int[][] map = new int[x][y];
-		for (int xₙ = 0; xₙ < x; ++xₙ) {
-			String line = input.get(xₙ);
-			for (int yₙ = 0; yₙ < y; ++yₙ) {
-				map[xₙ][yₙ] = line.charAt(yₙ) - '0';
-			}
-		}
-		return map;
 	}
 	
 	public static boolean isBasinPart(int height) {

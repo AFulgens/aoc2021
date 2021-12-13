@@ -82,6 +82,22 @@ public class AocUtils {
 	/**
 	 * Logs the given map with the given logger on the given level.
 	 */
+	public static void logMap(boolean[][] map, Logger logger, Level level) {
+		logger.atLevel(level).log("Map is:");
+		for (int i = 0; i < map.length; ++i) {
+			StringBuilder row = new StringBuilder(map[i].length + 2);
+			row.append("[");
+			for (int j = 0; j < map[i].length; ++j) {
+				row.append(map[i][j] ? "⊕" : " ");
+			}
+			row.append("]");
+			logger.atLevel(level).log(row.toString());
+		}
+	}
+	
+	/**
+	 * Logs the given map with the given logger on the given level.
+	 */
 	public static void logMap(int[][] map, Logger logger, Level level) {
 		logger.atLevel(level).log("Map is:");
 		for (int i = 0; i < map.length; ++i) {
